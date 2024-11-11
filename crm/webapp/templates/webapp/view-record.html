@@ -1,0 +1,65 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <div class="card">
+
+    
+
+       <div class="card-body">
+
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+
+        <strong>
+
+          &nbsp; &nbsp;
+    
+          {{record.first_name|upper}}
+    
+          {{record.last_name|upper}}
+    
+        </strong>
+    
+        <hr>
+
+          <p><strong>ID: </strong> {{record.id}} </p>
+
+          <p><strong>Email: </strong> {{record.email}} </p>
+
+          <p><strong>Phone Number: </strong> {{record.phone}} </p>
+
+          <p><strong>Address: </strong> {{record.address}} </p>
+
+          <p><strong>Province: </strong> {{record.province}} </p>
+
+          <p><strong>Country: </strong> {{record.country}} </p>
+
+          <p><strong>Creation Date: </strong> {{record.creation_date}} </p>
+          
+
+      </div>
+
+
+
+  </div>
+
+  <hr>
+
+  <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+
+  &nbsp;
+
+  <a href="{% url 'update-record' pk=record.id %}" class="btn btn-info"> Edit &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></a>
+
+  &nbsp;
+
+  <a href="{% url 'delete-record' pk=record.id %}" class="btn btn-danger"> Delete &nbsp; <i class="fa fa-minus-square" aria-hidden="true"></i></a>
+
+  &nbsp;
+
+
+
+
+{% endblock %}
